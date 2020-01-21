@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<SessionTemplate version="8.1.0.201912080816">
+    <baseApplication>com.fnfr.svt.applications.ssh</baseApplication>
+    <sessionProperties type="com.fnfr.svt.applications.ssh.documents.SSHProperties">
+        <TerminalProperties>
+            <captureProperties>
+                <commandBreakChars inherit="false">
+                    <item>[char Ctrl-C]</item>
+                </commandBreakChars>
+            </captureProperties>
+            <prompts merge="true">
+                <item name="Password" TypeOfPrompt="PASSWORD">
+                    <Content>Password:</Content>
+                </item>
+                <item name="User" MatchMethod="WILDCARD">
+                    <Content>*$</Content>
+                </item>
+                <item name="sudoPassword" TypeOfPrompt="PASSWORD">
+                    <Content>[sudo] password for test:</Content>
+                </item>
+                <item name="root" MatchMethod="WILDCARD">
+                    <Content>*#</Content>
+                </item>
+            </prompts>
+        </TerminalProperties>
+        <ipAddress inherit="false">192.168.56.101</ipAddress>
+        <user inherit="false">test</user>
+        <password inherit="false">bHE4hoN2cOk=</password>
+    </sessionProperties>
+    <responseLibrary inherit="false">project://Xubuntu/</responseLibrary>
+    <formMapLibrary inherit="false">project://Xubuntu/</formMapLibrary>
+    <sessionClassTestCase inherit="false">xubuntu-quickcall-library.fftc</sessionClassTestCase>
+    <nickName>xubuntuSSH</nickName>
+</SessionTemplate>

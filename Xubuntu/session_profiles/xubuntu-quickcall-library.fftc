@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<testCase version="8.1.0.201912080816">
+    <general>
+        <sessionClass includeTestCase="true" sessionType="xubuntu.ffsp"/>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="5bf226c0-c2e2-4cd4-a689-d18ccb66943f" action="open" session="s1">
+                    <command>
+                        <body>project://Xubuntu/session_profiles/xubuntu.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                        <sessionProperties type="com.fnfr.svt.applications.ssh.documents.SSHProperties"/>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="81deeadf-df8c-401d-af8a-988adba739ac" action="getPID" session="s1" useFieldsInCommand="false">
+                    <command>
+                        <body>-processName top</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="87b4e0b6-20e0-48e7-8a97-3040208ab120" action="close" session="s1" useFieldsInCommand="false">
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+            </steps>
+        </item>
+        <item name="saveToTxt" isPublic="true">
+            <steps>
+                <item guid="b9a42c68-ca0d-480a-8797-b06f484a2cb7" action="command" session="$session">
+                    <command>
+                        <body>$commandName &gt; $fileName</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+            </steps>
+            <arguments>
+                <item name="commandName">
+                    <isMandatory>true</isMandatory>
+                </item>
+                <item name="fileName">
+                    <isMandatory>true</isMandatory>
+                </item>
+            </arguments>
+        </item>
+        <item name="getPID" isPublic="true">
+            <steps>
+                <item guid="ed7aa267-bacc-4e77-b705-28400727b168" action="command" session="$session">
+                    <command>
+                        <body>ping 127.0.0.1</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties">
+                        <completionProperties>
+                            <completeWhen inherit="false">TIMED</completeWhen>
+                            <completionTime inherit="false">5</completionTime>
+                        </completionProperties>
+                    </applicationProperties>
+                </item>
+            </steps>
+            <arguments>
+                <item name="processName">
+                    <isMandatory>true</isMandatory>
+                </item>
+            </arguments>
+        </item>
+    </procedures>
+</testCase>

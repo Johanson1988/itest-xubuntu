@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<testCase version="8.1.0.201912080816">
+    <procedures>
+        <item name="main" defaultSessionProfile="project://Xubuntu/session_profiles/xubuntu.ffsp">
+            <description>Test quicklibrary calls</description>
+            <steps>
+                <item guid="d73c9cf5-0ee8-4e9e-b0cd-fee103f4f4fd" action="open" session="s1">
+                    <command>
+                        <body>project://Xubuntu/session_profiles/xubuntu.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                        <sessionProperties type="com.fnfr.svt.applications.ssh.documents.SSHProperties"/>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="e8c894ab-6692-4f7f-9c38-ce342d55847b" action="saveToTxt" session="s1" useFieldsInCommand="false">
+                    <command>
+                        <body>-commandName ifconfig -fileName ifconfigOutput.txt</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="ed3c4128-309c-4615-9d75-db58572be6f4" action="saveToTxt" session="s1" useFieldsInCommand="false">
+                    <command>
+                        <body>-commandName ls -fileName lsOutput.txt</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="be5b4e0d-daa9-47b1-830b-d7505262c8c4" action="saveToTxt" session="s1" useFieldsInCommand="false">
+                    <command>
+                        <body>-commandName &quot;ip a&quot; -fileName ipaOutput.txt</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+                <item guid="a9546d9d-2829-47a6-b68f-00dfaeba1c9c" action="close" session="s1" useFieldsInCommand="false">
+                    <applicationProperties type="com.fnfr.svt.editors.terminal.documents.StepDefaultProperties"/>
+                </item>
+            </steps>
+            <author>Johann</author>
+            <response>{}</response>
+        </item>
+    </procedures>
+</testCase>

@@ -25,7 +25,9 @@
         </TerminalProperties>
         <ipAddress inherit="false">192.168.56.101</ipAddress>
         <user inherit="false">test</user>
+        <auth_type inherit="false">PublicKey</auth_type>
         <password inherit="false">bHE4hoN2cOk=</password>
+        <key_file inherit="false">file:/C:/Users/johan/Documents/Keys/id_rsa.pub</key_file>
     </sessionProperties>
     <responseLibrary inherit="false">project://Xubuntu/</responseLibrary>
     <formMapLibrary inherit="false">project://Xubuntu/</formMapLibrary>
